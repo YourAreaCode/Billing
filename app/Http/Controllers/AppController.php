@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
+use PDF;
 use Artisan;
 use Cache;
 use Config;
@@ -34,6 +35,42 @@ class AppController extends BaseController
         $this->mailer = $mailer;
         $this->emailService = $emailService;
     }
+    
+    
+    
+    
+    
+    public function makepdf()
+    {	
+//         $snappy = App::make('snappy.pdf');
+		//To file
+		$html = '<h1>Bill</h1><p>You owe me money, dude.</p>';
+		
+/*
+		$snappy->generateFromHtml($html, '/tmp/bill-123.pdf');
+		$snappy->generate('http://www.github.com', '/tmp/github.pdf');
+		//Or output:
+		return new Response(
+		    $snappy->getOutputFromHtml($html),
+		    200,
+		    array(
+		        'Content-Type'          => 'application/pdf',
+		        'Content-Disposition'   => 'attachment; filename="file.pdf"'
+		    )
+		);
+*/
+
+// 		return PDF::loadFile('http://www.github.com')->inline('github.pdf');
+		
+		return PDF::loadHTML($html)->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->save('myfile.pdf');
+
+/*
+		$pdf = App::make('snappy.pdf.wrapper');
+		$pdf->loadHTML('<h1>Test</h1>');
+		return $pdf->inline();
+*/
+    }
+    
 
     public function showSetup()
     {

@@ -170,6 +170,8 @@ return [
 
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
+        Barryvdh\Snappy\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class
     ],
 
     /*
@@ -259,8 +261,10 @@ return [
         'Excel'           => 'Maatwebsite\Excel\Facades\Excel',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Crawler'   => 'Jaybizzle\LaravelCrawlerDetect\Facades\LaravelCrawlerDetect',
+        'PDF' => 'Barryvdh\DomPDF\Facade',
+		'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Updater' => Codedge\Updater\UpdaterFacade::class,
-        'Module' => Nwidart\Modules\Facades\Module::class,
+        'Module' => Nwidart\Modules\Facades\Module::class
     ],
 
 ];
