@@ -26,6 +26,14 @@ Route::post('/setup', 'AppController@doSetup');
 Route::get('/install', 'AppController@install');
 Route::get('/update', 'AppController@update');
 
+
+
+
+Route::get('pdf', 'PdfController@invoice');
+
+
+
+
 // Public pages
 Route::get('/', 'HomeController@showIndex');
 Route::get('/terms', 'HomeController@showTerms');
