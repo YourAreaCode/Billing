@@ -193,7 +193,11 @@ class AppServiceProvider extends ServiceProvider
             foreach ($value as $item) {
                 $qty = isset($item['qty']) ? $item['qty'] : 1;
                 $cost = isset($item['cost']) ? $item['cost'] : 1;
-                $total += $qty * $cost;
+                
+//                 var_dump($qty, $cost);
+                $total += intval($qty) * intval($cost);
+                
+                
             }
             return $total <= MAX_INVOICE_AMOUNT;
         });

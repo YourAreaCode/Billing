@@ -495,9 +495,9 @@ class InvoiceRepository extends BaseRepository
             $total += $invoice->custom_value2;
         }
 
-        $taxAmount1 = round($total * $invoice->tax_rate1 / 100, 2);
-        $taxAmount2 = round($total * $invoice->tax_rate2 / 100, 2);
-        $total = round($total + $taxAmount1 + $taxAmount2, 2);
+        $taxAmount1 = round(intval($total) * intval($invoice->tax_rate1) / 100, 2);
+        $taxAmount2 = round(intval($total) * intval($invoice->tax_rate2) / 100, 2);
+        $total = round(intval($total) + $taxAmount1 + $taxAmount2, 2);
         $total += $itemTax;
 
         // custom fields not charged taxes

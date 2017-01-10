@@ -44,7 +44,7 @@
     <meta name="msapplication-config" content="none"/>
     <link rel="canonical" href="{{ NINJA_APP_URL }}/{{ Request::path() }}"/>
 	
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <script src="{{ asset('/js/built.js') }}?no_cache={{ NINJA_VERSION }}" type="text/javascript"></script>
 
     <script type="text/javascript">
